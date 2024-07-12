@@ -1,0 +1,69 @@
+# Maintainer: Tom Richards <tom@tomrichards.net>
+#
+# Remarks:
+#
+# This is Tom's custom build of Ruby 3.3.4. It is based on the Arch Linux
+# PKGBUILD for Ruby 3.3.4, with the following changes:
+#
+# - No split subpackages such as ruby-docs, ruby-ri, ruby-test, etc.
+# - Includes bundler
+# - Uses jemalloc instead of glibc malloc
+#
+pkgname=(ruby-custom)
+pkgver=3.3.4
+pkgrel=1
+arch=(x86_64)
+url='https://www.ruby-lang.org/en/'
+license=(BSD custom)
+pkgdesc='An object-oriented language for quick and easy programming'
+depends=(gdbm jemalloc openssl libffi libyaml libxcrypt gmp zlib)
+makedepends=(doxygen gdbm graphviz jemalloc libffi libyaml openssl ttf-dejavu tk)
+optdepends=(
+  'tk: for Ruby/TK'
+)
+provides=(ruby ruby-bundler)
+conflicts=(ruby ruby-bundler)
+options=(!emptydirs)
+_osslver=3.2.0
+source=(https://cache.ruby-lang.org/pub/ruby/${pkgver:0:3}/ruby-${pkgver}.tar.xz
+        ruby-openssl-$_osslver.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v$_osslver.tar.gz)
+sha512sums=('b26461a13ff82a08a282f10108028bb2a2e4a28da6182a291062fc54089c6655d79c22cc69d59156f9b11cb10a17fe8c69d489343fbae123a45f03361b95c9eb'
+            '3a47d50ecb7a1547b6168aac88176e560bd2653223cbba2f2dd7cc0cb07f953eb416beb603f031dd2846191db313f975753fefb9b10b7e31a0ef738b00a22726')
+
+prepare() {
+  cd ruby-${pkgver}
+  rm -rf ext/openssl test/openssl
+  mv ../openssl-$_osslver/ext/openssl ext
+  mv ../openssl-$_osslver/lib ext/openssl
+  mv ../openssl-$_osslver/{History.md,openssl.gemspec} ext/openssl
+  mv ../openssl-$_osslver/test/openssl test
+}
+
+build() {
+  cd ruby-${pkgver}
+
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --sharedstatedir=/var/lib \
+    --libexecdir=/usr/lib/ruby \
+    --enable-shared \
+    --disable-rpath \
+    --with-dbm-type=gdbm_compat \
+    --with-jemalloc
+
+  make
+}
+
+check() {
+  cd ruby-${pkgver}
+
+  make test
+}
+
+package() {
+  cd ruby-${pkgver}
+
+  make DESTDIR="${pkgdir}" install
+}
