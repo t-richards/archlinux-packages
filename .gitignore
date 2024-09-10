@@ -1,0 +1,9 @@
+# Archives
+*.gz
+*.tar
+*.xz
+*.zip
+*.zst
+
+# Logs
+*.log
