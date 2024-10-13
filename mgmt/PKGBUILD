@@ -1,0 +1,34 @@
+# Maintainer: Tom Richards <tom@tomrichards.net>
+
+pkgname=mgmt
+pkgver=0.0.26
+pkgrel=3
+pkgdesc='Next generation config management.'
+arch=('x86_64' 'armv6h' 'armv7h')
+url="https://github.com/purpleidea/mgmt"
+license=('GPL3')
+makedepends=('augeas' 'go' 'git' 'go-tools')
+depends=('augeas' 'libvirt')
+# don't strip binaries! A sha1 is used to check binary consistency.
+options=('!strip')
+backup=("etc/${pkgname}/${pkgname}.conf")
+
+source=("${pkgname}::git+https://github.com/purpleidea/mgmt.git")
+sha256sums=('SKIP')
+
+build() {
+    cd "${srcdir}/${pkgname}"
+
+    go install github.com/blynn/nex@latest
+
+    go mod tidy
+    make VERSION="${pkgver}" SVERSION="${pkgver}" PROGRAM="${pkgname}"
+}
+
+package() {
+    cd "${srcdir}/${pkgname}"
+
+    install -Dm755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+    install -Dm644 "misc/bashrc.sh" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+    install -Dm644 "misc/example.conf" "${pkgdir}/etc/${pkgname}/${pkgname}.conf"
+}
