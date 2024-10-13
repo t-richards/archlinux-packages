@@ -7,7 +7,7 @@ pkgdesc='Next generation config management.'
 arch=('x86_64' 'armv6h' 'armv7h')
 url="https://github.com/purpleidea/mgmt"
 license=('GPL3')
-makedepends=('augeas' 'go' 'git' 'go-tools')
+makedepends=('augeas' 'go' 'git' 'go-tools' 'ragel')
 depends=('augeas' 'libvirt')
 # don't strip binaries! A sha1 is used to check binary consistency.
 options=('!strip')
@@ -19,8 +19,12 @@ sha256sums=('SKIP')
 build() {
     cd "${srcdir}/${pkgname}"
 
+    msg2 'installing go dependencies'
+    export GOPATH="${srcdir}"
+    export PATH="${PATH}:${GOPATH}/bin"
     go install github.com/blynn/nex@latest
 
+    msg2 'building mgmt'
     go mod tidy
     make VERSION="${pkgver}" SVERSION="${pkgver}" PROGRAM="${pkgname}"
 }

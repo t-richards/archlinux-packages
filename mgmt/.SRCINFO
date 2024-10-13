@@ -11,6 +11,7 @@ pkgbase = mgmt
 	makedepends = go
 	makedepends = git
 	makedepends = go-tools
+	makedepends = ragel
 	depends = augeas
 	depends = libvirt
 	options = !strip
