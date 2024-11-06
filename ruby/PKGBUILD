@@ -2,7 +2,7 @@
 #
 # Remarks:
 #
-# This is Tom's custom build of Ruby 3.3.5. It is based on the Arch Linux
+# This is Tom's custom build of Ruby 3.3.6. It is based on the Arch Linux
 # PKGBUILD for Ruby, with the following changes:
 #
 # - No split subpackages such as ruby-docs, ruby-ri, ruby-test, etc.
@@ -10,7 +10,7 @@
 # - Uses jemalloc instead of glibc malloc
 #
 pkgname=(ruby-custom)
-pkgver=3.3.5
+pkgver=3.3.6
 pkgrel=1
 arch=(x86_64)
 url='https://www.ruby-lang.org/en/'
@@ -27,7 +27,7 @@ options=(!emptydirs)
 _osslver=3.2.0
 source=(https://cache.ruby-lang.org/pub/ruby/${pkgver:0:3}/ruby-${pkgver}.tar.xz
         ruby-openssl-$_osslver.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v$_osslver.tar.gz)
-sha512sums=('dd5c6a7f74854e143e0ca46b9d7c0d1983fc4886f5f733cd108345dbf4b21f61ad978ad6806e05a57b7af28fd9216dd38d7145808188bbb3695a7f3a4eda3883'
+sha512sums=('c4b86188bf539fa737932e1ba5b746bc295e7c43b2f8cca2668eb7c88aa7228e2ce9032bbcd244a7d558a11bc842445b5fbeac3503ca7d223b63c53e08dba4ab'
             '3a47d50ecb7a1547b6168aac88176e560bd2653223cbba2f2dd7cc0cb07f953eb416beb603f031dd2846191db313f975753fefb9b10b7e31a0ef738b00a22726')
 
 prepare() {
