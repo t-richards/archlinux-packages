@@ -8,16 +8,17 @@
 # - No split subpackages such as ruby-docs, ruby-ri, ruby-test, etc.
 # - Includes bundler
 # - Uses jemalloc instead of glibc malloc
+# - Enables YJIT
 #
 pkgname=(ruby-custom)
 pkgver=3.3.6
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.ruby-lang.org/en/'
 license=(BSD-2-Clause)
 pkgdesc='An object-oriented language for quick and easy programming'
 depends=(gdbm jemalloc openssl libffi libyaml libxcrypt gmp zlib)
-makedepends=(doxygen gdbm graphviz jemalloc libffi libyaml openssl ttf-dejavu tk)
+makedepends=(doxygen gdbm graphviz jemalloc libffi libyaml openssl rust ttf-dejavu tk)
 optdepends=(
   'tk: for Ruby/TK'
 )
@@ -51,7 +52,8 @@ build() {
     --enable-shared \
     --disable-rpath \
     --with-dbm-type=gdbm_compat \
-    --with-jemalloc
+    --with-jemalloc \
+    --enable-yjit
 
   make
 }

@@ -1,7 +1,7 @@
 pkgbase = ruby-custom
 	pkgdesc = An object-oriented language for quick and easy programming
 	pkgver = 3.3.6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://www.ruby-lang.org/en/
 	arch = x86_64
 	license = BSD-2-Clause
@@ -12,6 +12,7 @@ pkgbase = ruby-custom
 	makedepends = libffi
 	makedepends = libyaml
 	makedepends = openssl
+	makedepends = rust
 	makedepends = ttf-dejavu
 	makedepends = tk
 	depends = gdbm
