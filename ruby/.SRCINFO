@@ -1,6 +1,6 @@
 pkgbase = ruby-custom
 	pkgdesc = An object-oriented language for quick and easy programming
-	pkgver = 3.4.1
+	pkgver = 3.4.2
 	pkgrel = 2
 	url = https://www.ruby-lang.org/en/
 	arch = x86_64
@@ -29,9 +29,9 @@ pkgbase = ruby-custom
 	conflicts = ruby
 	conflicts = ruby-bundler
 	options = !emptydirs
-	source = https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.1.tar.xz
+	source = https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.2.tar.xz
 	source = ruby-openssl-3.2.0.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v3.2.0.tar.gz
-	sha512sums = 8d2e34117696f9debf463ae1eed288fdbb5c1a12e32800e901b69218e3b7302a0066052077e2ebca851e3a635296199bd5a10437eea1d6f787f69a77bb865680
+	sha512sums = cb8b5023bce316393716548c5f0a44c7d0240724ff79b995517641266af30bedc6f402c1c8fa27368ea607e2aa6d36bbb201e00c6e9dd2a80d837431d32343b5
 	sha512sums = 3a47d50ecb7a1547b6168aac88176e560bd2653223cbba2f2dd7cc0cb07f953eb416beb603f031dd2846191db313f975753fefb9b10b7e31a0ef738b00a22726
 
 pkgname = ruby-custom
