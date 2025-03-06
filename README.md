@@ -7,7 +7,7 @@ A set of custom packages for Arch Linux.
 All packages must build in a clean chroot.
 
 ```bash
-extra-x86_64-build
+pkgctl build
 ```
 
 Update the `.SRCINFO` alongside any changes to the `PKGBUILD`.
@@ -15,3 +15,8 @@ Update the `.SRCINFO` alongside any changes to the `PKGBUILD`.
 ```bash
 makepkg --printsrcinfo > .SRCINFO
 ```
+
+Check for new versions.
+
+```
+pkgctl version check
