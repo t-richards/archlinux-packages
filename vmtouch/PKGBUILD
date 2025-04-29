@@ -13,11 +13,13 @@ makedepends=('perl')
 
 build() {
   cd "vmtouch-$pkgver"
+
   make vmtouch vmtouch.8
 }
 
 package() {
   cd "vmtouch-$pkgver"
+
   install -Dm755 vmtouch   $pkgdir/usr/bin/vmtouch
   install -Dm644 vmtouch.8 $pkgdir/usr/share/man/man8/vmtouch.8
 }

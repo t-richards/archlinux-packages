@@ -20,3 +20,4 @@ Check for new versions.
 
 ```
 pkgctl version check
+```
