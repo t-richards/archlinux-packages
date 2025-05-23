@@ -18,6 +18,6 @@ makepkg --printsrcinfo > .SRCINFO
 
 Check for new versions.
 
-```
+```bash
 pkgctl version check
 ```
