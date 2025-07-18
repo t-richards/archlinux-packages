@@ -2,7 +2,7 @@
 #
 # Remarks:
 #
-# This is Tom's custom build of Ruby 3.4.3. It is based on the Arch Linux
+# This is Tom's custom build of Ruby 3.4.5. It is based on the Arch Linux
 # PKGBUILD for Ruby, with the following changes:
 #
 # - No split subpackages such as ruby-docs, ruby-ri, ruby-test, etc.
@@ -11,7 +11,7 @@
 # - Enables YJIT
 #
 pkgname=(ruby-custom)
-pkgver=3.4.4
+pkgver=3.4.5
 pkgrel=1
 arch=(x86_64)
 url='https://www.ruby-lang.org/en/'
@@ -28,7 +28,7 @@ options=(!emptydirs)
 _osslver=3.3.0
 source=(https://cache.ruby-lang.org/pub/ruby/${pkgver:0:3}/ruby-${pkgver}.tar.xz
         ruby-openssl-$_osslver.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v$_osslver.tar.gz)
-sha512sums=('0d258cf790daad424c866404b5cbdc8adba0e4e13764847a89adf2335229e5184095c9f3e9594705897697e48bcc322d9a9f919b04047abb2075daca9fce8871'
+sha512sums=('1f5d2fd527d15bd81ca8f49767d6426533367c1018a1d275d34721a96410b51204236173224e5198a42b56162c6e7a7b0c060fc032a9fd7f250b44e05c7af560'
             '0a1602aea3d0db0d0551745725b82c8470c193e51b821a4b24147dea55299a5f81102b7f128cc6a113037239ad3ffd3d18819242707bce8cc3c168d18bca4b32')
 
 prepare() {
