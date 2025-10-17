@@ -2,7 +2,7 @@
 #
 # Remarks:
 #
-# This is Tom's custom build of Ruby 3.4.5. It is based on the Arch Linux
+# This is Tom's custom build of Ruby 3.4.7. It is based on the Arch Linux
 # PKGBUILD for Ruby, with the following changes:
 #
 # - No split subpackages such as ruby-docs, ruby-ri, ruby-test, etc.
