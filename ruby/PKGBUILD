@@ -25,11 +25,11 @@ optdepends=(
 provides=(ruby ruby-bundler)
 conflicts=(ruby ruby-bundler)
 options=(!emptydirs)
-_osslver=3.3.0
+_osslver=3.3.2
 source=(https://cache.ruby-lang.org/pub/ruby/${pkgver:0:3}/ruby-${pkgver}.tar.xz
         ruby-openssl-$_osslver.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v$_osslver.tar.gz)
 sha512sums=('a6b99a2f1d0115d5e7efa710da440b9066c524c335928367c80852630f8db5da36c0a82d6e7ace90e8c40cb20c6097cbdca15a51c343254cadf5f0adf60f8505'
-            '0a1602aea3d0db0d0551745725b82c8470c193e51b821a4b24147dea55299a5f81102b7f128cc6a113037239ad3ffd3d18819242707bce8cc3c168d18bca4b32')
+            'a774a8653ce81c457da12eb4f72ea9d138eade457dcda2543c3d042bce1c9fed2879231bdad05e7d40e73dfba0e0587a8bdf863ad6c83a523ed6e7b8ee59447c')
 
 prepare() {
   cd ruby-${pkgver}

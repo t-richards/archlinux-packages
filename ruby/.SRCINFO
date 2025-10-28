@@ -30,8 +30,8 @@ pkgbase = ruby-custom
 	conflicts = ruby-bundler
 	options = !emptydirs
 	source = https://cache.ruby-lang.org/pub/ruby/3.4/ruby-3.4.7.tar.xz
-	source = ruby-openssl-3.3.0.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v3.3.0.tar.gz
+	source = ruby-openssl-3.3.2.tar.xz::https://github.com/ruby/openssl/archive/refs/tags/v3.3.2.tar.gz
 	sha512sums = a6b99a2f1d0115d5e7efa710da440b9066c524c335928367c80852630f8db5da36c0a82d6e7ace90e8c40cb20c6097cbdca15a51c343254cadf5f0adf60f8505
-	sha512sums = 0a1602aea3d0db0d0551745725b82c8470c193e51b821a4b24147dea55299a5f81102b7f128cc6a113037239ad3ffd3d18819242707bce8cc3c168d18bca4b32
+	sha512sums = a774a8653ce81c457da12eb4f72ea9d138eade457dcda2543c3d042bce1c9fed2879231bdad05e7d40e73dfba0e0587a8bdf863ad6c83a523ed6e7b8ee59447c
 
 pkgname = ruby-custom
